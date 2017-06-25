@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#!/profile">Profile</a></li>
+                <li><a href="#!/news">Read the News</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+    <h1>{{model.user.username}}</h1>
+    <button type="button" class="btn btn-primary pull-right"
+            ng-click="model.followUser()">
+        FOLLOW
+        </span>
+    </button>
+    <h3>{{model.user.firstName}} {{model.user.lastName}}</h3>
+
+    <br>
+    <div class="row">
+        <div class="col-xs-4 " ng-repeat="article in model.news">
+            <a href="#!/details/{{article.favId}}">
+                <img class="list-image img-fluid img-thumbnail" src="{{article.imageUrl}}"
+                     alt="{{article.urlToImage}}">
+                <h4 class="headline">{{article.title}}</h4>
+
+            </a>
+        </div>
+    </div>
+
+
+</div>

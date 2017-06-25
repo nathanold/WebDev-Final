@@ -1,0 +1,55 @@
+<div class="container">
+
+    <h1>ADMIN PAGE</h1>
+    <h2>Add a new user</h2>
+    <div class="container">
+        <input type="text"
+               class="form-control"
+               placeholder="username"
+               ng-model="username"/>
+        <input type="password"
+               class="form-control"
+               placeholder="password"
+               ng-model="password"/>
+        <a ng-click="model.register(username,password)"
+           class="btn btn-primary btn-block">
+            Create User</a>
+    </div>
+
+    <br>
+    <h2>Edit Existing users</h2>
+    <p>Current number of users: {{model.totalSize}}</p>
+    <div class="container">
+        <br>
+        <li ng-repeat="user in model.users"
+            class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-sm-11 col-xs-11 dropdown-toggle" data-toggle="dropdown">
+                    {{user.username}}
+                </div>
+                <div class="container">
+                    <input type="text" class="form-control" id="password" placeholder="Password"
+                           ng-model="user.password">
+                    <input type="text" class="form-control" id="firstName" placeholder="first name"
+                           ng-model="user.firstName">
+                    <input type="text" class="form-control" id="lastName" placeholder="last name"
+                           ng-model="user.lastName">
+                    <input type="text" class="form-control" id="email" placeholder="Email"
+                           ng-model="user.email">
+                    <button type="button" class="btn btn-primary btn-xs"
+                            ng-click="model.deleteUser(user._id)">
+                <span class="glyphicon glyphicon-remove pull-right">
+
+            </span>
+
+                    </button>
+                    <button type="button" class="btn btn-primary btn-xs"
+                            ng-click="model.updateUser(user)">
+                <span class="glyphicon glyphicon-ok pull-right">
+            </span>
+                    </button>
+                </div>
+            </div>
+        </li>
+    </div>
+</div>

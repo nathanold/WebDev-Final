@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ng-if="!model.currentUser._id"><a href="#!/">Home</a></li>
+                <li ng-if="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                <li ng-if="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                <li ng-if="model.currentUser._id"><a href="#!/">Profile</a></li>
+                <li ng-if="model.currentUser._id"><a href="">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+
+
+<img class="img-fluid img-responsive" src="{{model.news[0].imageUrl}}"
+     alt="{{model.news.imageUrl}}">
+
+<h1>{{model.news[0].title}}</h1>
+<h2>{{model.news[0].author}}</h2>
+<h2>from {{model.news[0].source}}</h2>
+<h3>{{model.news[0].description}}</h3>
+<a href = {{model.news[0].url}}>
+
+<p>Read the full story</p>
+</a>

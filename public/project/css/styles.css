@@ -1,0 +1,30 @@
+.news-banner{
+    font-size:600%;
+    text-align: center;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    color: #ffffff;
+    background-color: #539097;
+    border-color: #539097;
+}
+
+.wd-toolbar {
+    position: absolute;
+    top: 5%;
+    right: 8%;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0.95;
+}
+
+.headline {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

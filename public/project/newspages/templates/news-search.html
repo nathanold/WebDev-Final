@@ -1,0 +1,54 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ng-if="!model.currentUser._id"><a href="#!/">Home</a></li>
+                <li ng-if="!model.currentUser._id"><a href="#!/login">Login</a></li>
+                <li ng-if="!model.currentUser._id"><a href="#!/register">Register</a></li>
+                <li ng-if="model.currentUser._id"><a href="#!/profile">Profile</a></li>
+                <li ng-if="model.currentUser._id"><a href="#!/explore">Explore</a></li>
+
+                <li ng-if="model.currentUser._id"><a href="">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="input-group">
+        <input ng-model="source"
+               type="text"
+               class="form-control">
+        <span class="input-group-btn">
+
+            <a ng-click="model.getNews(source)"
+               class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </a>
+        </span>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-xs-4 " ng-repeat="article in model.news">
+            <a href="#!/details/{{article.favId}}">
+                <img class="list-image img-fluid img-thumbnail" src="{{article.imageUrl}}"
+                     alt="{{article.urlToImage}}">
+                <h4 class="headline">{{article.title}}</h4>
+
+            </a>
+            <div ng-if="model.currentUser._id" class="wd-toolbar">
+                <button type="button" class="btn btn-primary btn-xs"
+                        ng-click="model.favorite(article._id)">
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

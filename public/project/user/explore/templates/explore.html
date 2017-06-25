@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#!/profile">Profile</a></li>
+                <li><a href="#!/news">Read the News</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+    <br>
+    <li ng-repeat="user in model.users"
+        class="list-group-item">
+        <div class="row">
+            <a href="#!/user/{{user.username}}">
+                <div class="col-lg-5 col-md-8 col-sm-11 col-xs-11">
+                    {{user.username}}
+                </div>
+            </a>
+        </div>
+    </li>
+</div>

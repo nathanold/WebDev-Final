@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NewsProject">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="./css/styles.css" rel="stylesheet"/>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="user/controllers/api-test-controller.js"></script>
+    <script src="user/controllers/login-controller.js"></script>
+    <script src="user/controllers/register-controller.js"></script>
+    <script src="user/controllers/profile-controller.js"></script>
+    <script src="user/admin/controllers/admin-controller.js"></script>
+    <script src="user/explore/controllers/explore-controller.js"></script>
+    <script src="user/explore/controllers/external-profile-controller.js"></script>
+
+    <script src="newspages/controllers/news-search-controller.js"></script>
+    <script src="newspages/controllers/news-details-controller.js"></script>
+
+    <script src="services/apiTestService.js"></script>
+    <script src="services/user.service.client.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<div ng-view>
+
+</div>
+</body>
+</html>
+
