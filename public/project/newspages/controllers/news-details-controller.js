@@ -3,8 +3,10 @@
         .module('NewsProject')
         .controller('newsDetailsController', newsDetailsController);
 
-    function newsDetailsController(apiTestService, $routeParams) {//currentUser){
+    function newsDetailsController(apiTestService, $routeParams, currentUser) {//currentUser){
         var model = this;
+        model.currentUser = currentUser;
+        console.log(currentUser);
         model.newsId = $routeParams['newsId'];
         function init() {
             apiTestService

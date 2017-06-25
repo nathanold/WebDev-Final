@@ -66,13 +66,16 @@
             .when('/details/:newsId', {
                 templateUrl: 'newspages/templates/news-details.html',
                 controller: 'newsDetailsController',
-                controllerAs: 'model'
+                controllerAs: 'model',
+                resolve: {
+                    currentUser: checkCurrentUser
+                }
             });
         function checkLoggedIn($q, $location, userService) {
             var deferred = $q.defer();
             userService.checkLoggedIn()
                 .then(function (currentUser) {
-                    console.log('current user '+currentUser);
+                    console.log('current user ' + currentUser);
                     if (currentUser === '0') {
                         deferred.reject();
                         $location.url('/login')
@@ -87,7 +90,7 @@
             var deferred = $q.defer();
             userService.checkLoggedIn()
                 .then(function (currentUser) {
-                    console.log('current user '+currentUser);
+                    console.log('current user ' + currentUser);
 
                     if (currentUser === '0') {
                         deferred.resolve({});
@@ -97,11 +100,12 @@
                 });
             return deferred.promise;
         }
+
         function checkAdmin($q, $location, userService) {
             var deferred = $q.defer();
             userService.checkAdmin()
                 .then(function (currentUser) {
-                    console.log('current user '+currentUser);
+                    console.log('current user ' + currentUser);
                     if (currentUser === '0') {
                         deferred.resolve({});
                         $location.url('/');
