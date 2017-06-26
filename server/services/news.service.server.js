@@ -16,6 +16,7 @@ function createNews(req, res) {
     //console.log("news" + JSON.stringify(news));
     for (a in news.articles) {
         var ms = Date.now().valueOf();
+        console.log(ms);
         articleNew = {
             author: news.articles[a].author,
             description: news.articles[a].description,
@@ -26,8 +27,8 @@ function createNews(req, res) {
             favId: new Date().valueOf() + ms,
             source: news.source
         };
+        console.log(articleNew.favId);
         newsModel.createNews(articleNew);
-
     }
 }
 
@@ -41,7 +42,6 @@ function findNewsById(req, res) {
             res.json(news);
         });
 }
-
 
 function findAllNews(req, res) {
     var source = req.params['source']
